@@ -18,14 +18,14 @@
   tasks:
 
   - name: Add ACLs to firewalls
-    asa_config:
+    asa_acl:
       lines:
         - access-list ACL-ANSIBLE extended permit tcp any any eq 82
       # provider: "{{ cli }}"
     when: not erase
 
   - name: Remove ACLs from firewalls
-    asa_config:
+    asa_acl:
       lines:
         - no access-list ACL-ANSIBLE extended permit tcp any any eq 82
       # provider: "{{ cli }}"
