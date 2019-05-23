@@ -23,7 +23,7 @@
     asa_acl:
       lines:
         - access-list ACL-ANSIBLE extended permit tcp any any eq 82
-      # provider: "{{ cli }}"
+      match: line
     when: not erase
 
   - name: Remove ACLs from firewalls
