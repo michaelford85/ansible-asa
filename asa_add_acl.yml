@@ -5,6 +5,7 @@
   gather_facts: no
   become: yes
   become_method: enable
+  become_pass: ""
   vars_files:
     - ./credentials/asa-credentials.yml
     - ./vars/default_vars.yml
