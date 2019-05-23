@@ -10,12 +10,6 @@
     - ./vars/default_vars.yml
   vars:
     erase: false
-    cli:
-      host:
-      username: "{{ ASA_USERNAME }}"
-      password: "{{ ASA_PASSWORD }}"
-      authorize: yes
-      auth_pass: "{{ ASA_PASSWORD }}"
 
   tasks:
 
@@ -23,7 +17,8 @@
     asa_acl:
       lines:
         - access-list ACL-ANSIBLE extended permit tcp any any eq 82
-      match: line
+      match: strict
+      replace: block
     when: not erase
 
   - name: Remove ACLs from firewalls
