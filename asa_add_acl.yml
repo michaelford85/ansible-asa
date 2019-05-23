@@ -12,7 +12,6 @@
       host:
       username: "{{ ASA_USERNAME }}"
       password: "{{ ASA_PASSWORD }}"
-      transport: cli
       authorize: yes
       auth_pass: "{{ ASA_PASSWORD }}"
 
