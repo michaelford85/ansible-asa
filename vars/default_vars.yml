@@ -1,0 +1,3 @@
+---
+ASA_USERNAME: "{{ vaulted_asa_username }}"
+ASA_PASSWORD: "{{ vaulted_asa_password }}"
