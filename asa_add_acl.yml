@@ -3,6 +3,8 @@
   hosts: asa
   connection: network_cli
   gather_facts: no
+  become: yes
+  become_method: enable
   vars_files:
     - ./credentials/asa-credentials.yml
     - ./vars/default_vars.yml
