@@ -3,6 +3,7 @@
   hosts: asa
   connection: network_cli
   gather_facts: no
+  become: yes
   vars_files:
     - ./credentials/asa-credentials.yml
     - ./vars/default_vars.yml
@@ -21,12 +22,12 @@
     asa_acl:
       lines:
         - access-list ACL-ANSIBLE extended permit tcp any any eq 82
-      provider: "{{ cli }}"
+      # provider: "{{ cli }}"
     when: not erase
 
   - name: Remove ACLs from firewalls
     asa_acl:
       lines:
         - no access-list ACL-ANSIBLE extended permit tcp any any eq 82
-      provider: "{{ cli }}"
+      # provider: "{{ cli }}"
     when: erase
