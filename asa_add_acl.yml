@@ -17,8 +17,7 @@
     when: not erase
 
   - name: Remove ACLs from firewalls
-    asa_acl:
+    asa_config:
       lines:
         - no access-list ACL-ANSIBLE extended permit tcp any any eq 82
-      # provider: "{{ cli }}"
     when: erase
